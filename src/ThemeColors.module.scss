@@ -1,0 +1,17 @@
+$primary-color: #01d371;
+$bg-gradient: linear-gradient(111.04deg, #E2E2E2 0.39%, rgba(255, 255, 255, 0) 86.46%);
+$bg-color1: #FFFFFF;
+$bg-color2: #F5F5F5;
+$bg-color3: #F8FBFF;
+$text-color-gray: #A6ABBD;
+$text-color-black: #2E3A59;
+
+:export {
+  primaryColor: $primary-color;
+  bg: $bg-gradient;
+  bgColor1: $bg-color1;
+  bgColor2: $bg-color2;
+  bgColor3: $bg-color3;
+  textColorGray: $text-color-gray;
+  textColorBlack: $text-color-black;
+}
