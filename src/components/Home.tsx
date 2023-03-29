@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Navbar from './Navbar';
-import bannerItem1 from '../Assets/banner-item1.svg'
-import bannerItem2 from '../Assets/banner-item2.svg'
-import bannerItem3 from '../Assets/banner-item3.svg'
-import bannerItem4 from '../Assets/banner-item4.svg'
-import berry from '../Assets/berry.png'
+import bannerItem1 from '../Assets/banner-item1.svg';
+import bannerItem2 from '../Assets/banner-item2.svg';
+import bannerItem3 from '../Assets/banner-item3.svg';
+import bannerItem4 from '../Assets/banner-item4.svg';
 
 
-const Home = () => {
+const Home: FC = () => {
     return (
         <div className='home-section-container'>
             <Navbar />
@@ -16,32 +15,32 @@ const Home = () => {
                 <h1>Lorem ipsum, dolor sit amet consectetur</h1>
                 <div className='home-banner-row'>
                     <div className='home-banner-item'>
-                        <img src={bannerItem1} alt={''}/>
+                        <img src={bannerItem1} alt={''} />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                     <div className='home-banner-item'>
-                        <img src={bannerItem2} alt={''}/>
+                        <img src={bannerItem2} alt={''} />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
                 <div className='home-banner-row-berry'>
                     <div className='home-banner-item'>
-                        <img src={bannerItem3} alt={''}/>
+                        <img src={bannerItem3} alt={''} />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                     <div className='home-banner-berry'></div>
                     <div className='home-banner-item'>
-                        <img src={bannerItem4} alt={''}/>
+                        <img src={bannerItem4} alt={''} />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
                 <div className='home-banner-row'>
                     <div className='home-banner-item'>
-                        <img src={bannerItem1} alt={''}/>
+                        <img src={bannerItem1} alt={''} />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                     <div className='home-banner-item'>
-                        <img src={bannerItem2} alt={''}/>
+                        <img src={bannerItem2} alt={''} />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>

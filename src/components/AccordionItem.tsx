@@ -15,7 +15,7 @@ const AccordionItem: FC<AccordionItemProps> = ({isOpen, setIsOpen, adv}) => {
 
     function clickHandle() {
         setIsOpen(
-            isOpen.map((status, id) => id === adv.id ? !status : status)
+            isOpen.map((status, id) => id === adv.id ? !status : false)
         )
     }
 
