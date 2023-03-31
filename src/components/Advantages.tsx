@@ -9,16 +9,16 @@ const Advantages: FC = () => {
     );
 
     return (
-        <div className='advantages-section-container'>
+        <section className='advantages-section-container'>
             <hr />
             <h2>Законный способ экономии электричества</h2>
             <span>Stability 24 обладает такими преимуществами:</span>
-            <div className='advantages-block'>
+            <figure className='advantages-block'>
                 {advantages.map((adv) => {
                     return <AccordionItem key={adv.id} setIsOpen={setIsOpen} isOpen={isOpen} adv={adv} />
                 })}
-            </div>
-        </div>
+            </figure>
+        </section>
     );
 };
 

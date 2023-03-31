@@ -20,7 +20,7 @@ const AccordionItem: FC<AccordionItemProps> = ({isOpen, setIsOpen, adv}) => {
     }
 
     return (
-        <div className='advantage-item'>
+        <figcaption className='advantage-item'>
             <div className={`advantage-title ${isOpen[adv.id] ? 'isOpen' : ''}`} onClick={clickHandle}>
                 <div className='advantage-title-left'>
                     <img src={adv.icon} alt='' />
@@ -34,7 +34,7 @@ const AccordionItem: FC<AccordionItemProps> = ({isOpen, setIsOpen, adv}) => {
             >
                 <p>{adv.text}</p>
             </div>
-        </div>
+        </figcaption>
     );
 };
 

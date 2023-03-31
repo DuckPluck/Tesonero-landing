@@ -14,16 +14,16 @@ const Navbar = () => {
         },
     ];
     return (
-        <nav>
+        <header>
             <div className='nav-left'>
                 <div className='nav-logo-container'>
                     <a href=''><img src={Logo} alt='' /></a>
                 </div>
-                <div className='navbar-links-container' id={'nav-links'}>
+                <nav className='navbar-links-container' id={'nav-links'}>
                     {menuOptions.map((a) => {
                         return <a href='' key={a.text}>{a.text}</a>
                     })}
-                </div>
+                </nav>
             </div>
 
 
@@ -31,7 +31,7 @@ const Navbar = () => {
                 <button className='primary-button'>Button</button>
             </div>
 
-        </nav>
+        </header>
     );
 };
 

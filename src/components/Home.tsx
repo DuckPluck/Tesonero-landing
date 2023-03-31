@@ -33,7 +33,7 @@ const Home: FC = () => {
         const scrollHandler = () => {
             let value = window.scrollY;
             bubbles1!.style.top = 300 + value * -0.3 + 'px';
-            bubbles2!.style.top = value * -0.5 + 'px';
+            bubbles2!.style.top = value * -0.8 + 'px';
         }
 
         window.addEventListener(('scroll'), scrollHandler)

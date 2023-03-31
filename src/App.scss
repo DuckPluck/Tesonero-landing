@@ -1,12 +1,11 @@
 @import "ThemeColors.module";
 
-
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Roboto, sans-serif !important;
+  scroll-behavior: smooth;
 }
 
 img {
@@ -17,14 +16,12 @@ img {
 .App {
   min-height: 100vh;
   width: 100vw;
-
 }
 
 body {
   max-width: 100%;
   overflow-x: hidden;
   background-color: #f6f6f6;
-
 }
 
 hr {
@@ -94,7 +91,7 @@ h3 {
   box-shadow: 0 8px 8px 0 rgba(0, 195, 104, 0.2);
 }
 
-nav {
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -383,7 +380,6 @@ nav {
 
     .slick-slider {
       display: none;
-      //height: 0;
     }
 
     .home-banner-parallax {
@@ -433,7 +429,6 @@ nav {
       }
 
       .home-banner-item {
-
         p {
           line-height: 19px;
         }
@@ -512,7 +507,7 @@ nav {
     width: 0;
   }
 
-  nav {
+  header {
     justify-content: center;
 
     .nav-left {
@@ -556,17 +551,6 @@ nav {
     width: 0;
   }
 
-  .slick-track {
-    display: flex;
-  }
-  .slick-track .slick-slide {
-    display: flex;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column;
-  }
-
   .home-section-container {
     height: auto;
 
@@ -593,6 +577,7 @@ nav {
           cursor: pointer;
           z-index: 9999;
         }
+
         .slider-right-btn {
           background-image: url('./assets/next-slide.svg');
           height: 19px;
@@ -608,12 +593,28 @@ nav {
         margin-bottom: 80px;
         width: 100%;
 
+        .slick-dots {
+          transform: translateY(54px);
+        }
+
         .slick-slide > div {
           display: grid;
           place-items: center;
           width: 80%;
           margin: auto;
           padding: 0px;
+        }
+
+        .slick-track {
+          display: flex;
+
+          .slick-slide {
+            display: flex;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+          }
         }
 
         .home-banner-item {
@@ -624,10 +625,6 @@ nav {
             height: 80px;
             margin: auto;
           }
-        }
-
-        .slick-dots {
-          transform: translateY(54px);
         }
       }
     }
@@ -643,7 +640,7 @@ nav {
     }
   }
 
-  nav {
+  header {
     width: 95vw;
     justify-content: center;
 
@@ -652,149 +649,147 @@ nav {
     };
   }
 
-  .navbar-menu-container {
-    display: flex;
-  }
-
-  .home-image-section,
-  .about-section-image-container {
-    width: 100%;
-    max-width: 400px;
-  }
-
   .primary-button {
     font-size: 1rem;
     padding: 0.8rem 2rem;
     cursor: pointer;
   }
 
-  .advantages-section-container span {
-    margin-top: -22px;
-  }
-
-  .advantages-section-container .advantages-block {
-    margin-bottom: 30px;
-  }
-
-  .reviews-section-container .reviews-main-quote {
-    flex-flow: column;
-    align-items: center;
-    position: relative;
-
-    .reviews-quote-avatar {
-      height: 187px;
-      width: 187px;
-      margin-right: 0;
-      z-index: 100;
+  .advantages-section-container {
+    span {
+      margin-top: -22px;
     }
 
-    .reviews-quote-text-container {
-      border: 1px solid;
-      border-image-source: $border-gradient;
-      box-shadow: 0px 8px 16px rgba(0, 195, 104, 0.24);
-      border-radius: 32px;
+    .advantages-block {
+      margin-bottom: 30px;
+    }
+  }
+
+  .reviews-section-container {
+    .reviews-main-quote {
+      flex-flow: column;
+      align-items: center;
+      position: relative;
+
+      .reviews-quote-avatar {
+        height: 187px;
+        width: 187px;
+        margin-right: 0;
+        z-index: 100;
+      }
+
+      .reviews-quote-text-container {
+        border: 1px solid;
+        border-image-source: $border-gradient;
+        box-shadow: 0px 8px 16px rgba(0, 195, 104, 0.24);
+        border-radius: 32px;
+        transform: translateY(-93px);
+        margin-bottom: -93px;
+        width: 90%;
+        padding: 133px 16px 16px;
+        text-align: center;
+      }
+    }
+  }
+
+  .reviews-section-container {
+    .reviews-sub-quotes {
+      flex-flow: column;
+      align-items: center;
+      margin-top: 128px;
       transform: translateY(-93px);
-      margin-bottom: -93px;
-      width: 90%;
-      padding: 133px 16px 16px;
-      text-align: center;
+
+      .reviews-sub-quote-right {
+        display: flex;
+        max-width: 90%;
+        margin-top: 50px;
+        justify-content: center;
+
+        .reviews-sub-quote-right-text {
+          width: 70%;
+          text-align: right;
+        }
+
+        .reviews-sub-quote-right-avatar {
+          display: block;
+          filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.5));
+          width: 59px;
+          height: 59px;
+          margin-left: 15px;
+
+          img {
+            aspect-ratio: 1;
+            border-radius: 50%;
+            object-fit: cover;
+            width: 100%;
+            user-drag: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+          }
+        }
+      }
+
+      .reviews-sub-quote-left {
+        flex-flow: row-reverse;
+        max-width: 90%;
+        justify-content: center;
+        margin-top: 25px;
+        margin-right: 0;
+
+        .reviews-sub-quote-left-text {
+          width: 70%;
+        }
+
+        .reviews-sub-quote-left-avatar {
+          display: block;
+          filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.5));
+          width: 59px;
+          height: 59px;
+          min-height: 59px;
+          min-width: 59px;
+          margin-left: 0;
+          margin-right: 15px;
+        }
+      }
     }
-  }
 
-  .reviews-section-container .reviews-main-quote .reviews-quote-text-container .quote-mark-close {
-    display: block;
-    position: absolute;
-    top: 15%;
-    left: 75%;
-    background-image: url('./assets/quotes-phone-close.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    width: 60px;
-    height: 39px;
-  }
+    .reviews-main-quote .reviews-quote-text-container {
+      p.quote-text::before {
+        content: none;
+      }
 
-  .reviews-section-container .reviews-main-quote .reviews-quote-text-container .quote-mark-open {
-    display: block;
-    position: absolute;
-    top: 15%;
-    right: 75%;
-    background-image: url('./assets/quotes-phone-open.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    width: 60px;
-    height: 39px;
-  }
+      p.quote-text::after {
+        content: none;
+      }
 
-  .reviews-section-container .reviews-main-quote .reviews-quote-text-container p.quote-text::before {
-    content: none;
-  }
+      .quote-mark-close {
+        display: block;
+        position: absolute;
+        top: 15%;
+        left: 75%;
+        background-image: url('./assets/quotes-phone-close.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        width: 60px;
+        height: 39px;
+      }
 
-  .reviews-section-container .reviews-main-quote .reviews-quote-text-container p.quote-text::after {
-    content: none;
-  }
-
-  .reviews-section-container .reviews-sub-quotes {
-    flex-flow: column;
-    align-items: center;
-    margin-top: 128px;
-    transform: translateY(-93px);
-  }
-
-  .reviews-section-container .reviews-sub-quotes .reviews-sub-quote-left {
-    flex-flow: row-reverse;
-    max-width: 90%;
-    justify-content: center;
-    margin-top: 25px;
-    margin-right: 0;
-
-    .reviews-sub-quote-left-text {
-      width: 70%;
+      .quote-mark-open {
+        display: block;
+        position: absolute;
+        top: 15%;
+        right: 75%;
+        background-image: url('./assets/quotes-phone-open.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        width: 60px;
+        height: 39px;
+      }
     }
-  }
-
-  .reviews-section-container .reviews-sub-quotes .reviews-sub-quote-left .reviews-sub-quote-left-avatar {
-    display: block;
-    filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.5));
-    width: 59px;
-    height: 59px;
-    min-height: 59px;
-    min-width: 59px;
-    margin-left: 0;
-    margin-right: 15px;
-  }
-
-  .reviews-section-container .reviews-sub-quotes .reviews-sub-quote-right {
-    display: flex;
-    max-width: 90%;
-    margin-top: 50px;
-    justify-content: center;
-
-    .reviews-sub-quote-right-text {
-      width: 70%;
-    }
-  }
-
-  .reviews-section-container .reviews-sub-quotes .reviews-sub-quote-right .reviews-sub-quote-right-avatar img {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    object-fit: cover;
-    width: 100%;
-    user-drag: none;
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-
-  }
-
-  .reviews-section-container .reviews-sub-quotes .reviews-sub-quote-right .reviews-sub-quote-right-avatar {
-    display: block;
-    filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.5));
-    width: 59px;
-    height: 59px;
-    margin-left: 15px;
   }
 }
 
@@ -803,35 +798,44 @@ nav {
     display: none;
   }
 
-  .reviews-section-container .reviews-main-quote .reviews-quote-avatar {
-    height: 97px;
-    width: 97px;
+  .reviews-section-container .reviews-main-quote {
+    .reviews-quote-avatar {
+      height: 97px;
+      width: 97px;
+    }
+
+    .reviews-quote-text-container {
+      transform: translateY(-48px);
+      padding-top: 78px;
+      margin-bottom: -48px;
+    }
   }
 
-  .reviews-section-container .reviews-main-quote .reviews-quote-text-container {
-    transform: translateY(-48px);
-    padding-top: 78px;
-    margin-bottom: -48px;
-  }
 
   .home-section-container .home-banner-container .home-banner-row-berry .home-banner-berry {
     margin-bottom: -30px;
   }
 
-  .reviews-section-container .reviews-main-quote .reviews-quote-text-container .quote-mark-close {
-    width: 40px;
-    height: 26px;
-    top: 5%;
-  }
+  .reviews-section-container {
+    .reviews-main-quote {
+      .reviews-quote-text-container {
+        .quote-mark-close {
+          width: 40px;
+          height: 26px;
+          top: 5%;
+        }
 
-  .reviews-section-container .reviews-main-quote .reviews-quote-text-container .quote-mark-open {
-    width: 40px;
-    height: 26px;
-    top: 5%;
-  }
+        .quote-mark-open {
+          width: 40px;
+          height: 26px;
+          top: 5%;
+        }
+      }
+    }
 
-  .reviews-section-container .reviews-sub-quotes {
-    margin-top: 83px;
-    transform: translateY(-48px);
+    .reviews-sub-quotes {
+      margin-top: 83px;
+      transform: translateY(-48px);
+    }
   }
 }
