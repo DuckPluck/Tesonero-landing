@@ -1,4 +1,4 @@
-import React, {FC, useEffect} from 'react';
+import React, {FC, useEffect, useRef} from 'react';
 import Navbar from './Navbar';
 import bannerItem1 from '../Assets/banner-item1.svg';
 import bannerItem2 from '../Assets/banner-item2.svg';
@@ -7,9 +7,24 @@ import bannerItem4 from '../Assets/banner-item4.svg';
 import bubbles1 from '../assets/bg-pattern1.png';
 import bubbles2 from '../assets/bg-pattern2.png';
 import berry from '../assets/berry.png';
+import {sliderItems} from "../../data";
+import Slider, {Settings} from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 const Home: FC = () => {
+
+    const sliderSettings: Settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+    };
+
+    const slider = useRef<Slider>(null!);
 
     useEffect(() => {
         const bubbles1 = document.getElementById('bubbles1');
@@ -36,6 +51,20 @@ const Home: FC = () => {
                     <img src={bubbles1} alt={''} className='parallax-layer' id='bubbles1' />
                     <img src={bubbles2} alt={''} className='parallax-layer' id='bubbles2' />
                 </div>
+                <div className="slider-btns">
+                    <div className='slider-left-btn' onClick={() => slider.current.slickPrev()} />
+                    <div className='slider-right-btn' onClick={() => slider.current.slickNext()} />
+                </div>
+                <Slider {...sliderSettings} ref={slider}>
+                    {sliderItems.map((item) => {
+                        return (
+                            <div className='home-banner-item' key={item.id}>
+                                <img src={item.image} alt={''} />
+                                <p>{item.text}</p>
+                            </div>
+                        )
+                    })}
+                </Slider>
                 <hr />
                 <h1>Lorem ipsum, dolor sit amet consectetur</h1>
                 <div className='home-banner-row'>
@@ -77,3 +106,5 @@ const Home: FC = () => {
 };
 
 export default Home;
+
+

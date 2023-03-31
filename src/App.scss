@@ -32,6 +32,7 @@ hr {
   height: 4px;
   width: 184px;
   margin-top: 75px;
+  box-sizing: content-box;
 }
 
 p {
@@ -359,10 +360,7 @@ nav {
       p {
         margin-top: 8px;
       }
-
-
     }
-
   }
 }
 
@@ -379,6 +377,15 @@ nav {
     position: relative;
     z-index: 10;
 
+    .slider-btns {
+      display: none;
+    }
+
+    .slick-slider {
+      display: none;
+      //height: 0;
+    }
+
     .home-banner-parallax {
       .parallax-layer {
         position: absolute;
@@ -389,10 +396,12 @@ nav {
 
     #bubbles1 {
       right: 55%;
+      top: 300px;
     }
 
     #bubbles2 {
       left: 55%;
+      top: 0;
     }
 
     hr {
@@ -547,6 +556,17 @@ nav {
     width: 0;
   }
 
+  .slick-track {
+    display: flex;
+  }
+  .slick-track .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
+
   .home-section-container {
     height: auto;
 
@@ -554,9 +574,61 @@ nav {
       height: auto;
       background: $bg-color1;
       flex-flow: column-reverse;
+      padding-bottom: 80px;
 
       hr {
         display: none;
+      }
+
+      .slider-btns {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin-top: -20px;
+
+        .slider-left-btn {
+          background-image: url('./assets/prev-slide.svg');
+          height: 19px;
+          width: 11px;
+          cursor: pointer;
+          z-index: 9999;
+        }
+        .slider-right-btn {
+          background-image: url('./assets/next-slide.svg');
+          height: 19px;
+          width: 11px;
+          cursor: pointer;
+          z-index: 9999;
+        }
+      }
+
+      .slick-slider {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 80px;
+        width: 100%;
+
+        .slick-slide > div {
+          display: grid;
+          place-items: center;
+          width: 80%;
+          margin: auto;
+          padding: 0px;
+        }
+
+        .home-banner-item {
+          height: auto;
+          text-align: center;
+
+          img {
+            height: 80px;
+            margin: auto;
+          }
+        }
+
+        .slick-dots {
+          transform: translateY(54px);
+        }
       }
     }
   }
@@ -594,6 +666,10 @@ nav {
     font-size: 1rem;
     padding: 0.8rem 2rem;
     cursor: pointer;
+  }
+
+  .advantages-section-container span {
+    margin-top: -22px;
   }
 
   .advantages-section-container .advantages-block {

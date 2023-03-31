@@ -3,7 +3,11 @@ import advantageIcon2 from './src/assets/advantage-icon2.svg';
 import advantageIcon3 from './src/assets/advantage-icon3.svg';
 import advantageIcon4 from './src/assets/advantage-icon4.svg';
 import advantageIcon5 from './src/assets/advantage-icon5.svg';
-import quoteAvatar from './src/assets/quote-avatar.png'
+import quoteAvatar from './src/assets/quote-avatar.png';
+import bannerItem1 from './src/assets/banner-item1.svg';
+import bannerItem2 from './src/assets/banner-item2.svg';
+import bannerItem3 from './src/assets/banner-item3.svg';
+import bannerItem4 from './src/assets/banner-item4.svg';
 
 export interface Advantage {
     title: string;
@@ -75,3 +79,37 @@ export const reviews: Reviews = {
         avatar: quoteAvatar,
     },
 }
+
+export interface SliderItem {
+    id: number;
+    text: string;
+    image: string;
+}
+
+export const sliderItems: SliderItem[] = [
+    {
+        id: 0,
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+        image: bannerItem1,
+    },
+    {
+        id: 2,
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+        image: bannerItem2,
+    },
+    {
+        id: 3,
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+        image: bannerItem3,
+    },
+    {
+        id: 4,
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+        image: bannerItem4,
+    },
+    {
+        id: 5,
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+        image: bannerItem1,
+    },
+];
