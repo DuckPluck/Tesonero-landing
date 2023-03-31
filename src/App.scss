@@ -9,7 +9,6 @@
   font-family: Roboto, sans-serif !important;
 }
 
-
 img {
   max-width: 100%;
   height: auto;
@@ -18,12 +17,14 @@ img {
 .App {
   min-height: 100vh;
   width: 100vw;
+
 }
 
 body {
   max-width: 100%;
   overflow-x: hidden;
   background-color: #f6f6f6;
+
 }
 
 hr {
@@ -99,9 +100,14 @@ nav {
   height: 160px;
   background-color: $bg-color1;
   padding: 0 85px;
+  z-index: 101;
 
   .nav-left {
     display: flex;
+
+    .nav-logo-container {
+      min-width: 208px;
+    }
 
     .navbar-links-container {
       display: flex;
@@ -163,8 +169,8 @@ nav {
     justify-content: center;
 
     .reviews-quote-avatar {
-      max-height: 187px;
-      max-width: 187px;
+      height: 187px;
+      width: 187px;
       margin-right: 3.5rem;
       filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.5));
 
@@ -173,14 +179,22 @@ nav {
         border-radius: 50%;
         object-fit: cover;
         width: 100%;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
       }
     }
 
-    .reviews-quote-text {
-      max-width: 50%;
-      min-width: 50%;
+    .reviews-quote-text-container {
+      width: 50%;
       position: relative;
       box-sizing: border-box;
+
+      .quote-mark-open, .quote-mark-close {
+        display: none;
+      }
 
       p.quote-text::before {
         content: url("./assets/quotes-before.svg");
@@ -229,12 +243,23 @@ nav {
           border-radius: 50%;
           object-fit: cover;
           width: 100%;
+          -webkit-user-drag: none;
+          -khtml-user-drag: none;
+          -moz-user-drag: none;
+          -o-user-drag: none;
+          user-drag: none;
         }
       }
     }
 
     .reviews-sub-quote-right {
       max-width: 30%;
+
+      .reviews-sub-quote-right-avatar {
+        display: none;
+        width: 0;
+        height: 0;
+      }
     }
 
     p.quote-text-author {
@@ -344,7 +369,6 @@ nav {
 .home-section-container {
   height: 1107px;
 
-
   .home-banner-container {
     background: $bg-gradient;
     display: flex;
@@ -352,6 +376,24 @@ nav {
     justify-content: center;
     flex-flow: column;
     height: 947px;
+    position: relative;
+    z-index: 10;
+
+    .home-banner-parallax {
+      .parallax-layer {
+        position: absolute;
+        pointer-events: none;
+        z-index: -1;
+      }
+    }
+
+    #bubbles1 {
+      right: 55%;
+    }
+
+    #bubbles2 {
+      left: 55%;
+    }
 
     hr {
       margin-top: 0;
@@ -360,6 +402,7 @@ nav {
     .home-banner-row-berry {
       display: flex;
       align-items: center;
+      justify-content: center;
       margin: -20px 0;
 
       .home-banner-berry {
@@ -374,6 +417,10 @@ nav {
         margin-left: -30px;
         margin-right: -30px;
         margin-bottom: -80px;
+
+        img {
+          display: none;
+        }
       }
 
       .home-banner-item {
@@ -423,7 +470,7 @@ nav {
   background-color: $bg-color3;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .navbar-button-container a {
     margin-right: 1rem;
     font-size: 1rem;
@@ -433,31 +480,108 @@ nav {
     font-size: 1rem;
   }
 
-  .home-bannerImage-container {
-    max-width: 600px;
+  .about-section-container {
+    flex-flow: column;
+  }
+
+  .reviews-section-container {
+    width: 100%;
+  }
+
+  .advantages-section-container {
+    width: 100%;
+  }
+
+  .about-section-container {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 1000px) {
+  .navbar-button-container {
+    display: none;
+    width: 0;
+  }
+
+  nav {
+    justify-content: center;
+
+    .nav-left {
+      width: 100%;
+      justify-content: space-between;
+    };
+  };
+
+  #nav-links {
+    margin: 0 0 0 1.5rem;
   }
 }
 
 @media (max-width: 800px) {
-  nav {
-    width: 100vw;
-    justify-content: center;
+  .App {
+    max-width: 95vw;
   }
-  .nav-logo-container {
-    min-width: 208px;
+
+  hr {
+    margin-top: 20px;
+  }
+
+  h1, h2 {
+    line-height: 28px;
+    font-size: 24px;
+    padding: 0 2rem;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  #nav-links, .home-banner-parallax, .home-section-container .home-banner-container .home-banner-row .home-banner-item, .home-section-container .home-banner-container .home-banner-item{
+    display: none;
+    width: 0;
+  }
+
+  .home-section-container {
+    height: auto;
+
+    .home-banner-container {
+      height: auto;
+      background: $bg-color1;
+      flex-flow: column-reverse;
+
+      hr {
+        display: none;
+      }
+    }
+  }
+
+  .home-section-container .home-banner-container .home-banner-row-berry .home-banner-berry {
+    background-image: none;
+    width: 100%;
+    height: 100%;
+
+    img {
+      display: block;
+    }
+  }
+
+  nav {
+    width: 95vw;
+    justify-content: center;
+
+    .nav-left {
+      justify-content: center;
+    };
   }
 
   .navbar-menu-container {
     display: flex;
-  }
-
-  .home-bannerImage-container {
-    max-width: 450px;
-  }
-
-
-  .about-section-container {
-    flex-direction: column;
   }
 
   .home-image-section,
@@ -472,21 +596,166 @@ nav {
     cursor: pointer;
   }
 
-  .about-section-container {
-    margin-top: 5rem;
+  .advantages-section-container .advantages-block {
+    margin-bottom: 30px;
   }
 
-  .App {
-    max-width: 95vw;
+  .reviews-section-container .reviews-main-quote {
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+
+    .reviews-quote-avatar {
+      height: 187px;
+      width: 187px;
+      margin-right: 0;
+      z-index: 100;
+    }
+
+    .reviews-quote-text-container {
+      border: 1px solid;
+      border-image-source: $border-gradient;
+      box-shadow: 0px 8px 16px rgba(0, 195, 104, 0.24);
+      border-radius: 32px;
+      transform: translateY(-93px);
+      margin-bottom: -93px;
+      width: 90%;
+      padding: 133px 16px 16px;
+      text-align: center;
+    }
+  }
+
+  .reviews-section-container .reviews-main-quote .reviews-quote-text-container .quote-mark-close {
+    display: block;
+    position: absolute;
+    top: 15%;
+    left: 75%;
+    background-image: url('./assets/quotes-phone-close.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 60px;
+    height: 39px;
+  }
+
+  .reviews-section-container .reviews-main-quote .reviews-quote-text-container .quote-mark-open {
+    display: block;
+    position: absolute;
+    top: 15%;
+    right: 75%;
+    background-image: url('./assets/quotes-phone-open.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 60px;
+    height: 39px;
+  }
+
+  .reviews-section-container .reviews-main-quote .reviews-quote-text-container p.quote-text::before {
+    content: none;
+  }
+
+  .reviews-section-container .reviews-main-quote .reviews-quote-text-container p.quote-text::after {
+    content: none;
+  }
+
+  .reviews-section-container .reviews-sub-quotes {
+    flex-flow: column;
+    align-items: center;
+    margin-top: 128px;
+    transform: translateY(-93px);
+  }
+
+  .reviews-section-container .reviews-sub-quotes .reviews-sub-quote-left {
+    flex-flow: row-reverse;
+    max-width: 90%;
+    justify-content: center;
+    margin-top: 25px;
+    margin-right: 0;
+
+    .reviews-sub-quote-left-text {
+      width: 70%;
+    }
+  }
+
+  .reviews-section-container .reviews-sub-quotes .reviews-sub-quote-left .reviews-sub-quote-left-avatar {
+    display: block;
+    filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.5));
+    width: 59px;
+    height: 59px;
+    min-height: 59px;
+    min-width: 59px;
+    margin-left: 0;
+    margin-right: 15px;
+  }
+
+  .reviews-section-container .reviews-sub-quotes .reviews-sub-quote-right {
+    display: flex;
+    max-width: 90%;
+    margin-top: 50px;
+    justify-content: center;
+
+    .reviews-sub-quote-right-text {
+      width: 70%;
+    }
+  }
+
+  .reviews-section-container .reviews-sub-quotes .reviews-sub-quote-right .reviews-sub-quote-right-avatar img {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 100%;
+    user-drag: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+
+  }
+
+  .reviews-section-container .reviews-sub-quotes .reviews-sub-quote-right .reviews-sub-quote-right-avatar {
+    display: block;
+    filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.5));
+    width: 59px;
+    height: 59px;
+    margin-left: 15px;
   }
 }
 
-@media (max-width: 600px) {
-  .navbar-links-container {
+@media (max-width: 400px) {
+  .navbar-links-container, .navbar-button-container {
     display: none;
   }
 
-  .navbar-button-container {
-    display: none;
+  .reviews-section-container .reviews-main-quote .reviews-quote-avatar {
+    height: 97px;
+    width: 97px;
+  }
+
+  .reviews-section-container .reviews-main-quote .reviews-quote-text-container {
+    transform: translateY(-48px);
+    padding-top: 78px;
+    margin-bottom: -48px;
+  }
+
+  .home-section-container .home-banner-container .home-banner-row-berry .home-banner-berry {
+    margin-bottom: -30px;
+  }
+
+  .reviews-section-container .reviews-main-quote .reviews-quote-text-container .quote-mark-close {
+    width: 40px;
+    height: 26px;
+    top: 5%;
+  }
+
+  .reviews-section-container .reviews-main-quote .reviews-quote-text-container .quote-mark-open {
+    width: 40px;
+    height: 26px;
+    top: 5%;
+  }
+
+  .reviews-section-container .reviews-sub-quotes {
+    margin-top: 83px;
+    transform: translateY(-48px);
   }
 }

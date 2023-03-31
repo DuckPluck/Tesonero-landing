@@ -49,7 +49,7 @@ export const advantages: Advantage[] = [
 export interface Reviews {
     mainQuote: { author: string, text: string, avatar: string };
     leftQuote: { author: string, text: string, avatar: string };
-    rightQuote: { author: string, text: string };
+    rightQuote: { author: string, text: string, avatar: string };
 }
 
 export const reviews: Reviews = {
@@ -72,5 +72,6 @@ export const reviews: Reviews = {
     rightQuote: {
         author: 'Лариса Петрова',
         text: 'Сейчас вернулась к прежнему режиму, и не нарадуюсь. Счет за свет не растет, и это круто.',
+        avatar: quoteAvatar,
     },
 }

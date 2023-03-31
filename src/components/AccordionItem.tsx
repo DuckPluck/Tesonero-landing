@@ -26,7 +26,7 @@ const AccordionItem: FC<AccordionItemProps> = ({isOpen, setIsOpen, adv}) => {
                     <img src={adv.icon} alt='' />
                     <h3>{adv.title}</h3>
                 </div>
-                <div className='advantages-indicator' />
+                <i className='advantages-indicator' />
             </div>
             <div ref={contentHeight}
                  className={`advantage-text ${isOpen[adv.id] ? 'show' : ''}`}

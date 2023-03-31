@@ -1,8 +1,8 @@
 {
   "name": "tesonero-landing",
-  "private": false,
+  "private": true,
   "version": "0.0.0",
-  "homepage": "https://duckpluck.github.io/Tesonero-landing",
+  "homepage": "https://duckpluck.github.io/Tesonero-landing/",
   "type": "module",
   "scripts": {
     "dev": "vite",

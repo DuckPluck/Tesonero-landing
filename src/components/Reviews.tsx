@@ -11,7 +11,9 @@ const Reviews: FC = () => {
                 <div className='reviews-quote-avatar'>
                     <img src={reviews.mainQuote.avatar} alt={''} />
                 </div>
-                <div className='reviews-quote-text'>
+                <div className='reviews-quote-text-container'>
+                    <i className="quote-mark-open" />
+                    <i className="quote-mark-close" />
                     <p className='quote-text'>{reviews.mainQuote.text}</p>
                     <p className='quote-text-author'>{reviews.mainQuote.author}</p>
                 </div>
@@ -28,8 +30,13 @@ const Reviews: FC = () => {
 
                 </div>
                 <div className='reviews-sub-quote-right'>
-                    <p className='quote-text'>{reviews.rightQuote.text}</p>
-                    <p className='quote-text-author'>{reviews.rightQuote.author}</p>
+                    <div className='reviews-sub-quote-right-text'>
+                        <p className='quote-text'>{reviews.rightQuote.text}</p>
+                        <p className='quote-text-author'>{reviews.rightQuote.author}</p>
+                    </div>
+                    <div className='reviews-sub-quote-right-avatar'>
+                        <img src={reviews.rightQuote.avatar} alt={''} />
+                    </div>
                 </div>
             </div>
         </div>

@@ -10,8 +10,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 )
 
 
+// TODO почистить media запросы в css
 // TODO накинуть базовую семантику
 // TODO адаптив
 // TODO карусель
 // TODO добавить бабел для работы деструктуризации на IE (мб еще что-то)
-// TODO вывести в консоль app ascii арт типа powered by DuckPluck и ссылку на git

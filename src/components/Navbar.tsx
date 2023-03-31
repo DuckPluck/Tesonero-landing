@@ -4,13 +4,13 @@ import Logo from '../Assets/Logo.svg';
 const Navbar = () => {
     const menuOptions = [
         {
-            text: 'NavItem1',
+            text: 'Pricing',
         },
         {
-            text: 'NavItem2',
+            text: 'Blog',
         },
         {
-            text: 'NavItem3',
+            text: 'About',
         },
     ];
     return (
@@ -19,7 +19,7 @@ const Navbar = () => {
                 <div className='nav-logo-container'>
                     <a href=''><img src={Logo} alt='' /></a>
                 </div>
-                <div className='navbar-links-container'>
+                <div className='navbar-links-container' id={'nav-links'}>
                     {menuOptions.map((a) => {
                         return <a href='' key={a.text}>{a.text}</a>
                     })}
