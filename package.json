@@ -12,11 +12,13 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.14",
     "@react-spring/parallax": "^9.7.1",
+    "@vitejs/plugin-legacy": "^4.0.2",
     "gh-pages": "^5.0.0",
     "node-sass": "^8.0.0",
     "node-scss": "^7.0.3",
