@@ -48,6 +48,7 @@ h1 {
   font-size: 40px;
   line-height: 47px;
   text-transform: uppercase;
+  width: 100%;
 }
 
 h2 {
@@ -162,9 +163,14 @@ header {
   padding-left: 2rem;
   padding-bottom: 5%;
 
+  h2 {
+    width: 100%;
+  }
+
   .reviews-main-quote {
     display: flex;
     justify-content: center;
+    width: 100%;
 
     .reviews-quote-avatar {
       height: 187px;
@@ -224,6 +230,7 @@ header {
     display: flex;
     justify-content: space-around;
     margin-top: 6rem;
+    width: 100%;
 
     .reviews-sub-quote-left {
       display: flex;
@@ -280,9 +287,21 @@ header {
   padding-right: 2rem;
   padding-left: 2rem;
 
+  hr {
+    flex: 0 0 auto;
+  }
+
+  h2 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
   span {
     margin-top: -35px;
     margin-bottom: 35px;
+    text-align: center;
+    flex: 0 0 auto;
+    width: 100%;
   }
 
   .advantages-block {
@@ -409,10 +428,13 @@ header {
       align-items: center;
       justify-content: center;
       margin: -20px 0;
+      flex: 0 0 auto;
+      width: 100%;
 
       .home-banner-berry {
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 530px;
         height: 370px;
         background-image: url("./assets/berry.png");
@@ -425,12 +447,14 @@ header {
 
         img {
           display: none;
+          flex: 0 0 auto;
         }
-      }
 
-      .home-banner-item {
-        p {
-          line-height: 19px;
+        .home-banner-item {
+          p {
+            line-height: 19px;
+            width: 100%;
+          }
         }
       }
     }
@@ -445,6 +469,7 @@ header {
 
         p {
           line-height: 19px;
+          width: 100%;
         }
       }
     }
@@ -472,6 +497,7 @@ header {
   height: 100%;
   width: 100%;
   background-color: $bg-color3;
+  min-height: 100vh;
 }
 
 @media (max-width: 1200px) {
@@ -513,6 +539,7 @@ header {
     .nav-left {
       width: 100%;
       justify-content: space-between;
+      flex: 0 0 auto;
     };
   };
 
