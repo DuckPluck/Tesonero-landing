@@ -11,5 +11,3 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <App />
     </React.StrictMode>
 )
-
-// TODO: Поправить съехавшую верстку для IE11
