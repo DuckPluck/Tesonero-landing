@@ -36,7 +36,7 @@ const Home: FC = () => {
             bubbles2!.style.top = value * -0.8 + 'px';
         }
 
-        window.addEventListener(('scroll'), scrollHandler)
+        window.addEventListener('scroll', scrollHandler)
 
         return () => {
             window.removeEventListener('scroll', scrollHandler);
@@ -69,34 +69,34 @@ const Home: FC = () => {
                 <h1>Lorem ipsum, dolor sit amet consectetur</h1>
                 <div className='home-banner-row'>
                     <div className='home-banner-item'>
-                        <img src={bannerItem1} alt={''} />
+                        <image className='home-banner-item-1' />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                     <div className='home-banner-item'>
-                        <img src={bannerItem2} alt={''} />
+                        <image className='home-banner-item-2' />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
                 <div className='home-banner-row-berry'>
                     <div className='home-banner-item'>
-                        <img src={bannerItem3} alt={''} />
+                        <image className='home-banner-item-3' />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                     <div className='home-banner-berry'>
                         <img src={berry} alt={''} />
                     </div>
                     <div className='home-banner-item'>
-                        <img src={bannerItem4} alt={''} />
+                        <image className='home-banner-item-4' />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>
                 <div className='home-banner-row'>
                     <div className='home-banner-item'>
-                        <img src={bannerItem1} alt={''} />
+                        <image className='home-banner-item-1' />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                     <div className='home-banner-item'>
-                        <img src={bannerItem2} alt={''} />
+                        <image className='home-banner-item-2' />
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     </div>
                 </div>

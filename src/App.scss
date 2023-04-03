@@ -30,6 +30,7 @@ hr {
   width: 184px;
   margin-top: 75px;
   box-sizing: content-box;
+  border: 0;
 }
 
 p {
@@ -69,7 +70,6 @@ h3 {
 }
 
 .primary-button {
-  padding: 1rem 2.5rem;
   background-color: $primary-color;
   outline: none;
   border: none;
@@ -81,16 +81,18 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 117px;
-  max-height: 32px;
+  width: 117px;
+  height: 32px;
   border-radius: 8px;
   box-shadow: 0 8px 8px 0 rgba(0, 195, 104, 0.4);
+
+  &:hover {
+    background-color: #01e078;
+    box-shadow: 0 8px 8px 0 rgba(0, 195, 104, 0.2);
+  }
 }
 
-.primary-button:hover {
-  background-color: #01e078;
-  box-shadow: 0 8px 8px 0 rgba(0, 195, 104, 0.2);
-}
+
 
 header {
   display: flex;
@@ -130,22 +132,15 @@ header {
         min-height: 32px;
         border-radius: 8px;
         text-decoration: none;
+        height: 32px;
       }
 
       a:hover {
         background-color: $primary-color;
-        outline: none;
-        border: none;
-        cursor: pointer;
-        font-weight: 600;
         color: white;
         transition: 0.2s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         min-width: 117px;
         min-height: 32px;
-        border-radius: 8px;
         box-shadow: 0 8px 8px 0 rgba(0, 195, 104, 0.4);
       }
     }
@@ -380,6 +375,43 @@ header {
   }
 }
 
+.home-banner-item-1, .home-banner-item-2, .home-banner-item-3, .home-banner-item-4 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 80px;
+  width: 60%;
+  transition: 0.2s;
+}
+
+.home-banner-item-1 {
+  background-image: url("./assets/banner-item1.svg");
+  &:hover {
+    background-image: url("./assets/banner-item1-hover.svg");
+  }
+}
+
+.home-banner-item-2 {
+  background-image: url("./assets/banner-item2.svg");
+  &:hover {
+    background-image: url("./assets/banner-item2-hover.svg");
+  }
+}
+
+.home-banner-item-3 {
+  background-image: url("./assets/banner-item3.svg");
+  &:hover {
+    background-image: url("./assets/banner-item3-hover.svg");
+  }
+}
+
+.home-banner-item-4 {
+  background-image: url("./assets/banner-item4.svg");
+  &:hover {
+    background-image: url("./assets/banner-item4-hover.svg");
+  }
+}
+
 .home-section-container {
   height: 1107px;
 
@@ -431,6 +463,13 @@ header {
       flex: 0 0 auto;
       width: 100%;
 
+      .home-banner-item {
+        p {
+          line-height: 19px;
+          width: 100%;
+        }
+      }
+
       .home-banner-berry {
         display: flex;
         align-items: center;
@@ -448,13 +487,6 @@ header {
         img {
           display: none;
           flex: 0 0 auto;
-        }
-
-        .home-banner-item {
-          p {
-            line-height: 19px;
-            width: 100%;
-          }
         }
       }
     }
